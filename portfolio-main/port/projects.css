@@ -1,0 +1,282 @@
+/* Projects Section Styling */
+.projects-section {
+  min-height: 100vh;
+  padding: 120px 20px 60px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 1s ease-out 0.2s forwards;
+}
+
+.projects-title {
+  font-family: 'SF Pro Display', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1d1d1f;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #007aff 0%, #00e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.9) translateY(30px);
+  animation: slideInScale 1.2s ease-out 0.6s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slideshow-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Slides */
+.slide {
+  display: none;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 500px;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #007aff 0%, #00e0ff 100%);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-name {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1s forwards;
+}
+
+.project-description {
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6e6e73;
+  margin: 0 0 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1.4s forwards;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(0, 224, 255, 0.1) 100%);
+  color: #007aff;
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.2) 0%, rgba(0, 224, 255, 0.2) 100%);
+  transform: translateY(-2px);
+}
+
+.project-links {
+  margin-top: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1.6s forwards;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #24292e 0%, #1a1e23 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(36, 41, 46, 0.3);
+}
+
+.github-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(36, 41, 46, 0.4);
+  background: linear-gradient(135deg, #1a1e23 0%, #0f1114 100%);
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Fade-in animation for title */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive design for slideshow */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 100px 15px 40px 15px;
+  }
+  
+  .projects-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .slideshow-container {
+    margin: 0 10px;
+  }
+  
+  .slide-content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .project-image {
+    order: 1;
+    min-height: 250px;
+  }
+  
+  .project-info {
+    order: 2;
+    padding: 2rem;
+  }
+  
+  .project-name {
+    font-size: 1.5rem;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 2rem;
+  }
+  
+  .slideshow-container {
+    margin: 0 5px;
+    border-radius: 16px;
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+  }
+  
+  .project-name {
+    font-size: 1.3rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+  }
+  
+  .github-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
